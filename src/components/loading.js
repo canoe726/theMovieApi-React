@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-class Loading extends Component {
-    toggleLoading() {
-        const loadingWrapper = document.querySelector('.loading-wrapper');
-        loadingWrapper.classList.toggle('hidden');
-    }
+const toggleLoading = () => {
+    const loadingWrapper = document.querySelector('.loading-wrapper');
+    loadingWrapper.classList.toggle('hidden');
+}
 
+class Loading extends Component {
     render() {
         return (
             <div className="loading-wrapper hidden">
@@ -16,3 +16,4 @@ class Loading extends Component {
 }
 
 export default Loading;
+export { toggleLoading };

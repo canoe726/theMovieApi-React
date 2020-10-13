@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 
-class Header extends Component {
-    constructor(props) {
-        super(props);
-
-        this.goHome = this.goHome.bind(this);
-    }
-    
+class Header extends Component {    
     goHome() {
         window.location.href = '/';
     }
