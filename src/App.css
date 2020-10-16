@@ -95,6 +95,18 @@ header .btn-wrapper {
   text-align: center;
 }
 
+.notice {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.notice .refresh-page {
+  cursor: pointer;
+}
+
 .error-wrapper {
   display: flex;
   flex-direction: column;

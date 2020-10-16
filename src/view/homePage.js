@@ -6,25 +6,24 @@ import Contents from '../components/contents.js';
 
 import { toggleLoading } from '../components/loading.js';
 
+import { getLocal, setLocal } from '../util/localStorage.js';
+
 import { api } from '../api/movieApi.js'
 
 class HomePage extends Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            movies: null
-        };
+        this.handleFetch = this.handleFetch.bind(this);
+        this.state = {movies: getLocal('movies')};
     }
 
     handleFetch(response, mode) {
         if(!response.isError) {
             const movies = response.data.data.movies;
-            // setLocal('movies', movies, 1000 * 60 * 5);
-            //contents.setState(movies);
-            this.setState({
-                movies: movies
-            });
+            setLocal('movies', movies);
+            toggleLoading();
+
+            this.setState({movies: movies});
         } else {
             const status = response.data.status;
             if(status === 'FetchAbort') {
@@ -40,7 +39,6 @@ class HomePage extends Component {
             <div className="home-page">
                 <Header
                 onClick={async mode => {
-                    console.log('mode : ',mode)
                     toggleLoading();
                     
                     if(mode === 'title') {
@@ -53,9 +51,7 @@ class HomePage extends Component {
                     }
                 }}
                 ></Header>
-                <Contents
-                data={this.state.movies}
-                >
+                <Contents data={this.state.movies}>
                 </Contents>
             </div>
         );

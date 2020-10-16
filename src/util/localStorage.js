@@ -1,4 +1,4 @@
-const getLocal = keywords => {
+const getLocal = (keywords) => {
     const data = localStorage.getItem(keywords);
     if(keywords === 'movies') {
         const jsonData = JSON.parse(data);
@@ -6,13 +6,9 @@ const getLocal = keywords => {
     }
 }
 
-const setLocal = (keywords, data, timeOut) => {
+const setLocal = (keywords, data) => {
     const jsonData = JSON.stringify(data);
     localStorage.setItem(keywords, jsonData);
-
-    setTimeout(() => {
-        localStorage.removeItem(keywords);
-    }, timeOut);
 }
 
 export { getLocal, setLocal }
