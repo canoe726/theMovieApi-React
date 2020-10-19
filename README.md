@@ -1,9 +1,9 @@
-# theMovieApi
+# theMovieApi-React
 yts.mx 영화 API 호출 웹 페이지
 
 
 
-### 1. theMovieApi 프로젝트
+### 1. theMovieApi-React 프로젝트
 > yts.mx 홈페이지에서 api 호출 기능 구현 (URL : https://yts.mx/api#list_movies)
 
 > React 라이브러리를 사용해 구현
