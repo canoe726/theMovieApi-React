@@ -6,11 +6,22 @@ import Loading from '../components/loading.js';
 import { lazyLoad } from '../util/lazyLoading.js';
 
 class Contents extends Component {
+    initImageComponent() {
+        const movieItems = document.querySelectorAll('.movie-item');
+        movieItems.forEach(item => {
+            const img = item.querySelector('img');
+            img.classList.add('lazy');
+            img.removeAttribute('src');
+        });
+    }
+
     componentDidMount() {
+        this.initImageComponent();
         lazyLoad();
     }
 
     componentDidUpdate() {
+        this.initImageComponent();
         lazyLoad();
     }
 

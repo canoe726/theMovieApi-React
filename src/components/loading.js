@@ -9,7 +9,7 @@ class Loading extends Component {
     render() {
         return (
             <div className="loading-wrapper hidden">
-                <img className="loading-img" src="./img/loading.gif" alt="loading-img"></img>
+                <img className="loading-img" src="/img/loading.gif" alt="loading-img"></img>
             </div>
         );
     }
